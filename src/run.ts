@@ -116,4 +116,7 @@ export async function run() {
 }
 
 
-run().catch(core.setFailed);
+/* istanbul ignore next */
+if (require.main === module) {
+    run().catch(core.setFailed);
+}
